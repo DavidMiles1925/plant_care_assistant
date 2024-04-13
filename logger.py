@@ -17,11 +17,11 @@ def write_to_log(message):
     if os.path.exists(fname):
         fout = open(fname, 'a')
         fout.write(f"{timestamp}:   ")
-        fout.write(f"{message}\n\n")
+        fout.write(f"{message}\n")
     else:
         fout = open(fname, 'w')
         fout.write(f"{timestamp}:   ")
-        fout.write(f"{message}\n\n")
+        fout.write(f"{message}\n")
 
     fout.close()
 
