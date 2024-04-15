@@ -1,7 +1,7 @@
 ##########        Main Control Variables          ##########
 
 NUMBER_OF_ANALOG_INPUTS = 3     # Maximum 3
-DURATION_BETWEEN_CHECKS = 1     # seconds
+DURATION_BETWEEN_CHECKS = 60    # seconds
 DRY_COUNT_BEFORE_WATERING = 6   # How many times should a "dry" result be returned before the plant is watered?
 WATER_IF_DRY = False            # Should the plant(s) be watered if it is dry?
 
@@ -17,7 +17,7 @@ WATER_VALUE = 100
 
 ##########      Console Output and Logging        ##########
 
-LOG_DIRECTORY_PATH = "/home/astro/plant_care_assistant/logs"
+LOG_DIRECTORY_PATH = "/home/bulbasaur/plant_care_assistant/logs"
 
 CONSOLE_OUTPUT_ON = True
 LOGGING_ENABLED = True
@@ -32,7 +32,7 @@ CLEAR_SCREEN_BEFORE_PRINT = True
 ADS_COMMANDS = [0x84, 0xc4, 0x94, 0xd4, 0xa4, 0xe4, 0xb4, 0xf4]
 
 
-##########             Welcome Message            ##########
+##########                RELAY/LED               ##########
 
 LED_ARRAY_WATER_STATUS = [17, 27, 22]
 # Future State: RELAY_ARRAY_WATER_STATUS = [17,27,22,...]

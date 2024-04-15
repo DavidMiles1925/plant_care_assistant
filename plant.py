@@ -20,7 +20,7 @@ from config import ADS_COMMANDS, \
 from logger import console_and_log
 
 bus = SMBus(1)
-is_dry_counter = 0
+is_dry_list = []
 
 #Substitue for actually watering
 BLUE_LED = 23
@@ -45,52 +45,52 @@ def read_sensor(input):
 
 
 def output_sensor_data(value, status, analog_input):
-    global is_dry_counter
+    global is_dry_list
 
-    console_and_log(f"Sensor: {analog_input+1}\t{status}\t\t({value})\t\t[count: {is_dry_counter}]")
+    console_and_log(f"Sensor: {analog_input+1}\t{status}\t\t({value})\t\t[count: {is_dry_list[analog_input]}]")
     #console_and_log(f"{status}")
 
 
 def determine_soil_status(value, analog_input):
-    global is_dry_counter
+    global is_dry_list
 
     if value >= DRY_VALUE:
-        is_dry_counter = is_dry_counter + 1
+        is_dry_list[analog_input] = is_dry_list[analog_input] + 1
         GPIO.output(LED_ARRAY_WATER_STATUS[analog_input], GPIO.HIGH)
         return "Dry: No Soil"
     
     elif value >= DRY_SOIL_VALUE:
-        is_dry_counter = is_dry_counter + 1
+        is_dry_list[analog_input] = is_dry_list[analog_input] + 1
         GPIO.output(LED_ARRAY_WATER_STATUS[analog_input], GPIO.HIGH)
         return "Dry Soil    "
     
     elif value >= MOIST_SOIL_VALUE:
-        is_dry_counter = 0
+        is_dry_list[analog_input] = 0
         GPIO.output(LED_ARRAY_WATER_STATUS[analog_input], GPIO.LOW)
         return "Moist Soil  "
     
     elif value >= WET_SOIL_VALUE:
-        is_dry_counter = 0
+        is_dry_list[analog_input] = 0
         GPIO.output(LED_ARRAY_WATER_STATUS[analog_input], GPIO.LOW)
         return "Wet Soil    "
     
     elif value >= WATER_VALUE:
-        is_dry_counter = 0
+        is_dry_list[analog_input] = 0
         GPIO.output(LED_ARRAY_WATER_STATUS[analog_input], GPIO.LOW)
         return "Water       "
     else:
         return "Low Value"
     
-def check_water_status():
-    global is_dry_counter
+def check_water_status(analog_input):
+    global is_dry_list
 
-    if is_dry_counter >= DRY_COUNT_BEFORE_WATERING and WATER_IF_DRY:
-        water_plant()
+    if is_dry_list[analog_input] >= DRY_COUNT_BEFORE_WATERING and WATER_IF_DRY:
+        water_plant(analog_input)
         
     
 
-def water_plant():
-    global is_dry_counter
+def water_plant(analog_input):
+    global is_dry_list
 
     console_and_log("*****WATER DISPENSED*****")
 
@@ -100,7 +100,7 @@ def water_plant():
 
     GPIO.output(BLUE_LED, GPIO.LOW)
 
-    is_dry_counter = 0
+    is_dry_list[analog_input] = 0
 
 
 if __name__ == "__main__":
@@ -108,6 +108,9 @@ if __name__ == "__main__":
         setup_pins()
         os.system("clear")
         console_and_log(OPENING_MESSAGE)
+
+        for input_counter in range(NUMBER_OF_ANALOG_INPUTS):
+            is_dry_list.append(1)
 
         while True:
             for analog_input in range(NUMBER_OF_ANALOG_INPUTS):
@@ -117,7 +120,7 @@ if __name__ == "__main__":
                 
                 output_sensor_data(sensor_value, soil_status, analog_input)
 
-                check_water_status()
+                check_water_status(analog_input)
 
             sleep(DURATION_BETWEEN_CHECKS)
 
