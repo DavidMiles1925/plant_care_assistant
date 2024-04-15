@@ -3,7 +3,20 @@ from time import sleep
 import os
 import RPi.GPIO as GPIO
 
-from config import ADS_COMMANDS, DURATION_BETWEEN_CHECKS, OPENING_MESSAGE, DRY_VALUE, DRY_SOIL_VALUE, MOIST_SOIL_VALUE, WET_SOIL_VALUE, WATER_VALUE, CLEAR_SCREEN_BEFORE_PRINT, DRY_COUNT_BEFORE_WATERING, WATER_IF_DRY, NUMBER_OF_ANALOG_INPUTS, LED_ARRAY_WATER_STATUS
+from config import ADS_COMMANDS, \
+            CLEAR_SCREEN_BEFORE_PRINT, \
+            DRY_COUNT_BEFORE_WATERING, \
+            DURATION_BETWEEN_CHECKS, \
+            DRY_SOIL_VALUE, \
+            DRY_VALUE, \
+            LED_ARRAY_WATER_STATUS, \
+            MOIST_SOIL_VALUE, \
+            NUMBER_OF_ANALOG_INPUTS, \
+            OPENING_MESSAGE, \
+            WET_SOIL_VALUE, \
+            WATER_VALUE, \
+            WATER_IF_DRY
+            
 from logger import console_and_log
 
 bus = SMBus(1)
