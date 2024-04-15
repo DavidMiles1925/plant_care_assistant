@@ -92,7 +92,7 @@ def check_water_status(analog_input):
 def water_plant(analog_input):
     global is_dry_list
 
-    console_and_log("*****WATER DISPENSED*****")
+    console_and_log(f"*****WATER DISPENSED: Sensor {analog_input + 1}*****")
 
     GPIO.output(BLUE_LED, GPIO.HIGH)
 

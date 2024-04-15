@@ -10,7 +10,6 @@
 | ADS7830 Analog-to-Digital Converter      |    1     | link goes here |
 | Capacitive Moisture Sensor(s)            |   1-3    | link goes here |
 | Water Pump(s) and Line                   |   1-3    | link goes here |
-| Resistors: TBD                           |   TBD    | TBD            |
 
 ### Diagram
 
@@ -71,3 +70,5 @@ sudo apt-get install python3-smbus
 > >
 > > Added Red LEDs for each of the 3 channels to indicate the need for watering. These will eventually (Once care is automated) be replaced with an RGB LED to indicate a broad status of the plants. (3 pins used for 1 each of the red LEDs, those same 3 pins used for a single RGB LED)
 > > Pins 17, 27, 22
+>
+> > Added support for watering multiple channels.
