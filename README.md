@@ -84,3 +84,5 @@ sudo apt-get install python3-smbus
 >
 > > Added ability to turn single light on and off
 > > Pin 23
+>
+> > Didn't think hard enough about the logic on my light. I will just write a separate script instead of trying to incorporate it into my already growing .py file.

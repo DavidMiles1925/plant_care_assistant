@@ -9,7 +9,7 @@ WATER_IF_DRY = True            # Should the plant(s) be watered if it is dry?
 ##########               Lighting                 ##########
 
 LIGHT_RELAY_PIN = 23
-LIGHT_START_TIME = "17:00:00"      # Format must be HH:MM:SS, 24 hr format
+LIGHT_START_TIME = "19:00:00"      # Format must be HH:MM:SS, 24 hr format
 LIGHT_DURATION = 10             # Time in seconds
 
 
@@ -48,7 +48,7 @@ LED_ARRAY_WATER_STATUS = [17, 27, 22]
 ##########             Welcome Message            ##########
 
 OPENING_MESSAGE = f"\n******************************************************************\n\nProgram Started\n\nPlant will be watered when dry: {WATER_IF_DRY}\nCheck will be made every {DURATION_BETWEEN_CHECKS} seconds.\n\nCalibration Values:\nDry:\t\t{DRY_VALUE}\nDry Soil:\t{DRY_SOIL_VALUE}\nMoist Soil:\t{MOIST_SOIL_VALUE}\nWet Soil:\t{WET_SOIL_VALUE}\nWater:\t\t{WATER_VALUE}\n\n********************************************"
-
+LIGHT_LOG_MESSAGE = f"Program Started\n\nLight relay is using pin {LIGHT_RELAY_PIN}\nLight will turn on at {LIGHT_START_TIME}\nIt will remain on for {LIGHT_DURATION}"
 
 ##########                Reference               ##########
 

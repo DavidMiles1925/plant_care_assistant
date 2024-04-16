@@ -1,7 +1,6 @@
 
 import os
 import RPi.GPIO as GPIO
-import threading
 from smbus import SMBus
 from datetime import datetime
 from time import sleep
@@ -31,17 +30,6 @@ bus = SMBus(1)
 # List that will be used to keep track of 
 is_dry_list = []
 
-light_is_on = False
-
-def check_if_light_toggle_is_needed():
-    current_time = datetime.now().strftime("%H:%M:%S")
-
-    if current_time == LIGHT_START_TIME and light_is_on == False:
-        toggle_light(True)
-        start_a_timer(LIGHT_DURATION)
-        
-
-
 def check_if_water_is_needed(analog_input):
     global is_dry_list
 
@@ -49,12 +37,7 @@ def check_if_water_is_needed(analog_input):
         water_plant(analog_input)
 
 
-def countdown_timer_to_turn_off_light(seconds):
-    while seconds > 0:
-        sleep(1)
-        seconds = seconds - 1
 
-    toggle_light(False)
 
 
 def determine_soil_moisture(value, analog_input):
@@ -109,30 +92,8 @@ def setup_pins():
 
         for led in range(len(LED_ARRAY_WATER_STATUS)):
             GPIO.setup(LED_ARRAY_WATER_STATUS[led], GPIO.OUT)
-            GPIO.output(LED_ARRAY_WATER_STATUS[led], GPIO.HIGH)
+            GPIO.output(LED_ARRAY_WATER_STATUS[led], GPIO.HIGH)     
 
-        GPIO.setup(LIGHT_RELAY_PIN, GPIO.OUT)
-        GPIO.output(LIGHT_RELAY_PIN, GPIO.LOW)        
-
-
-def start_a_timer(seconds):
-    timer_thread = threading.Thread(target=countdown_timer_to_turn_off_light, args=(seconds,))
-    timer_thread.daemon = True      # This is set to True so that the timer runs in the background.
-    timer_thread.start()
-
-
-def toggle_light(value):
-    global light_is_on
-
-    if value:
-        console_and_log("********** LIGHT TURNED ON **********")
-        GPIO.output(LIGHT_RELAY_PIN, GPIO.HIGH)
-        light_is_on = True
-
-    else:
-        console_and_log("********** LIGHT TURNED OFF **********")
-        GPIO.output(LIGHT_RELAY_PIN, GPIO.LOW)
-        light_is_on = False
 
 
 def water_plant(analog_input):
@@ -164,7 +125,6 @@ if __name__ == "__main__":
 
                 check_if_water_is_needed(analog_input)
 
-                check_if_light_toggle_is_needed()
 
             sleep(DURATION_BETWEEN_CHECKS)
 
