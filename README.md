@@ -1,5 +1,7 @@
 # Plant Care Assistant
 
+## Project Description
+
 ## Seting up the Device
 
 ### Parts List
@@ -10,6 +12,9 @@
 | ADS7830 Analog-to-Digital Converter      |    1     | link goes here |
 | Capacitive Moisture Sensor(s)            |   1-3    | link goes here |
 | Water Pump(s) and Line                   |   1-3    | link goes here |
+| 5V Relay                                 |   2-4    | link goes here |
+| Solderless Breadboard                    |    1     | link goes here |
+| Dupont Cables 10cm and 30cm              |   Many   | link goes here |
 
 ### Diagram
 
@@ -34,6 +39,10 @@ sudo apt-get install python3-smbus
 
 1. Install Git
 2. Clone Repo
+
+### Run the Program
+
+### Accessing the Logs
 
 ## Development Notes
 
@@ -71,4 +80,7 @@ sudo apt-get install python3-smbus
 > > Added Red LEDs for each of the 3 channels to indicate the need for watering. These will eventually (Once care is automated) be replaced with an RGB LED to indicate a broad status of the plants. (3 pins used for 1 each of the red LEDs, those same 3 pins used for a single RGB LED)
 > > Pins 17, 27, 22
 >
-> > Added support for watering multiple channels.
+> > Added logic for "watering" multiple channels, still using LEDs as substitutes.
+>
+> > Added ability to turn single light on and off
+> > Pin 23
