@@ -90,10 +90,13 @@ sudo python plant.py
 
 ## Gallery
 
-[Hooked Up to Monitor](./readme_media/hooked_to_monitor.png)
-[First Time Remote](./readme_media/first_time_remote.jpg)
-[On the Shelf](./readme_media/on_the_shelf.jpg)
-[Top View](./readme_media/top_view.jpg)
+![Hooked Up to Monitor](./readme_media/hooked_to_monitor.png)
+
+![First Time Remote](./readme_media/first_time_remote.jpg)
+
+![On the Shelf](./readme_media/on_the_shelf.jpg)
+
+![Top View](./readme_media/top_view.jpg)
 
 ## Development Notes
 
