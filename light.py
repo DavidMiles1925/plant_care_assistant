@@ -46,20 +46,26 @@ def toggle_light(value):
     global light_is_on
 
     if value:
-        light_log("ON\n")
+        light_log("Light ON")
         GPIO.output(LIGHT_RELAY_PIN, GPIO.HIGH)
         light_is_on = True
 
     else:
-        light_log("OFF\n")
+        light_log("Light OFF")
         GPIO.output(LIGHT_RELAY_PIN, GPIO.LOW)
         light_is_on = False
 
 
 
 if __name__ == "__main__":
-     setup_pins()
-     light_log(LIGHT_LOG_MESSAGE)
+    try:
+        setup_pins()
+        print()
+        light_log(LIGHT_LOG_MESSAGE)
 
-     while True:
-          check_if_light_toggle_is_needed()
+        while True:
+            check_if_light_toggle_is_needed()
+
+    except Exception as e:
+        print(e)
+        light_log(e)

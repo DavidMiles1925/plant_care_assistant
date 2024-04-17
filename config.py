@@ -9,7 +9,7 @@ WATER_IF_DRY = True            # Should the plant(s) be watered if it is dry?
 ##########               Lighting                 ##########
 
 LIGHT_RELAY_PIN = 23
-LIGHT_START_TIME = "19:00:00"      # Format must be HH:MM:SS, 24 hr format
+LIGHT_START_TIME = "20:00:00"      # Format must be HH:MM:SS, 24 hr format
 LIGHT_DURATION = 10             # Time in seconds
 
 

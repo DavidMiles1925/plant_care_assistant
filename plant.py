@@ -1,6 +1,7 @@
 
 import os
 import RPi.GPIO as GPIO
+import subprocess
 from smbus import SMBus
 from datetime import datetime
 from time import sleep
@@ -111,6 +112,7 @@ if __name__ == "__main__":
         setup_pins()
         os.system("clear")
         console_and_log(OPENING_MESSAGE)
+        subprocess.run(["python", "light.py"])
 
         for input_counter in range(NUMBER_OF_ANALOG_INPUTS):
             is_dry_list.append(1)

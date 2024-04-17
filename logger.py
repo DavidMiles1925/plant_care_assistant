@@ -40,11 +40,11 @@ def light_log(message):
     os.chdir(path_str)
     if os.path.exists(fname):
         fout = open(fname, 'a')
-        fout.write(f"{timestamp}:   ")
+        fout.write(f"{datestamp}\t{timestamp}:\t\t")
         fout.write(f"{message}\n")
     else:
         fout = open(fname, 'w')
-        fout.write(f"{timestamp}:   ")
+        fout.write(f"{datestamp}\t{timestamp}:\t\t")
         fout.write(f"{message}\n")
 
     fout.close()
