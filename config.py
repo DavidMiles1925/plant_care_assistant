@@ -1,16 +1,16 @@
 ##########        Main Control Variables          ##########
 
 NUMBER_OF_ANALOG_INPUTS = 3     # Maximum 3
-DURATION_BETWEEN_CHECKS = 20    # Time in seconds
-DRY_COUNT_BEFORE_WATERING = 6   # How many times should a "dry" result be returned before the plant is watered?
+DURATION_BETWEEN_CHECKS = 1800    # Time in seconds
+DRY_COUNT_BEFORE_WATERING = 24   # How many times should a "dry" result be returned before the plant is watered?
 WATER_IF_DRY = True             # Should the plant(s) be watered if it is dry?
 
 
 ##########               Lighting                 ##########
 
 LIGHT_RELAY_PIN = 23
-LIGHT_START_TIME_ARRAY = ["20:00:00", "10:47:00", "10:48:00"]      # Format must be HH:MM:SS, 24 hr format
-LIGHT_DURATION = 30              # Time in seconds
+LIGHT_START_TIME_ARRAY = ["08:00:00", "10:00:00", "12:00:00, 14:00:00, 16:00:00"]      # Format must be HH:MM:SS, 24 hr format
+LIGHT_DURATION = 900              # Time in seconds
 LIGHT_SCRIPT_PATH = "/home/bulbasaur/plant_care_assistant/light.py"
 
 
@@ -49,7 +49,7 @@ LED_ARRAY_WATER_STATUS = [17, 27, 22]
 ##########             Welcome Message            ##########
 
 OPENING_MESSAGE = f"\n******************************************************************\n\nMain Program Started\n\nPlant will be watered when dry: {WATER_IF_DRY}\nCheck will be made every {DURATION_BETWEEN_CHECKS} seconds.\n\nCalibration Values:\nDry:\t\t{DRY_VALUE}\nDry Soil:\t{DRY_SOIL_VALUE}\nMoist Soil:\t{MOIST_SOIL_VALUE}\nWet Soil:\t{WET_SOIL_VALUE}\nWater:\t\t{WATER_VALUE}\n\n********************************************"
-LIGHT_LOG_MESSAGE = f"\n\nLight ControlSubprocess Started\n\nLight relay is using pin {LIGHT_RELAY_PIN}\nLight will turn on at {LIGHT_START_TIME_ARRAY}\nIt will remain on for {LIGHT_DURATION} seconds\n\n********************************************"
+LIGHT_LOG_MESSAGE = f"\n\nLight Control Subprocess Started\n\nLight relay is using pin {LIGHT_RELAY_PIN}\nLight will turn on at {LIGHT_START_TIME_ARRAY}\nIt will remain on for {LIGHT_DURATION} seconds\n\n********************************************"
 
 ##########                Reference               ##########
 

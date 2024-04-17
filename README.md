@@ -142,3 +142,5 @@ sudo python plant.py
 > > Didn't think hard enough about the logic on my light. I will just write a separate script instead of trying to incorporate it into my already growing .py file.
 >
 > > Spent a whole bunch of time working on the light. I ended up running light.py as a subprocess. That is fine, except I need to incorporate a more graceful way of terminating the processes. Maybe. The point of the thing is to keep running all the time.
+>
+> > I made the light start time into an array of start times. In order to avoid scorching the leaves, I will give the plants short bursts of diirected light throughout the day, rather than a sustained period.
