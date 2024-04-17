@@ -13,9 +13,6 @@ from config import ADS_COMMANDS, \
             DRY_SOIL_VALUE, \
             DRY_VALUE, \
             LED_ARRAY_WATER_STATUS, \
-            LIGHT_DURATION, \
-            LIGHT_RELAY_PIN, \
-            LIGHT_START_TIME,\
             MOIST_SOIL_VALUE, \
             NUMBER_OF_ANALOG_INPUTS, \
             OPENING_MESSAGE, \
@@ -109,11 +106,11 @@ def water_plant(analog_input):
 
 if __name__ == "__main__":
     try:
+        subprocess.run(["python", "light.py"])
         setup_pins()
         os.system("clear")
         console_and_log(OPENING_MESSAGE)
-        subprocess.run(["python", "light.py"])
-
+        
         for input_counter in range(NUMBER_OF_ANALOG_INPUTS):
             is_dry_list.append(1)
 
@@ -138,5 +135,5 @@ if __name__ == "__main__":
         GPIO.cleanup()
 
     except KeyboardInterrupt:
-        console_and_log(f"The program was terminated using Ctrl+C\n\n\n")
+        console_and_log(f"The moisture program was terminated using Ctrl+C\n\n\n")
         GPIO.cleanup()

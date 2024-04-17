@@ -60,7 +60,7 @@ def toggle_light(value):
 if __name__ == "__main__":
     try:
         setup_pins()
-        print()
+        print(LIGHT_LOG_MESSAGE)
         light_log(LIGHT_LOG_MESSAGE)
 
         while True:
@@ -69,3 +69,6 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
         light_log(e)
+
+    except KeyboardInterrupt:
+        light_log("The light Program was closed using Ctrl+C")
