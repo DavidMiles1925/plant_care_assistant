@@ -1,7 +1,7 @@
 ##########        Main Control Variables          ##########
 
 NUMBER_OF_ANALOG_INPUTS = 3     # Maximum 3
-DURATION_BETWEEN_CHECKS = 60    # Time in seconds
+DURATION_BETWEEN_CHECKS = 10    # Time in seconds
 DRY_COUNT_BEFORE_WATERING = 6   # How many times should a "dry" result be returned before the plant is watered?
 WATER_IF_DRY = True            # Should the plant(s) be watered if it is dry?
 
@@ -48,7 +48,7 @@ LED_ARRAY_WATER_STATUS = [17, 27, 22]
 ##########             Welcome Message            ##########
 
 OPENING_MESSAGE = f"\n******************************************************************\n\nProgram Started\n\nPlant will be watered when dry: {WATER_IF_DRY}\nCheck will be made every {DURATION_BETWEEN_CHECKS} seconds.\n\nCalibration Values:\nDry:\t\t{DRY_VALUE}\nDry Soil:\t{DRY_SOIL_VALUE}\nMoist Soil:\t{MOIST_SOIL_VALUE}\nWet Soil:\t{WET_SOIL_VALUE}\nWater:\t\t{WATER_VALUE}\n\n********************************************"
-LIGHT_LOG_MESSAGE = f"Program Started\n\nLight relay is using pin {LIGHT_RELAY_PIN}\nLight will turn on at {LIGHT_START_TIME}\nIt will remain on for {LIGHT_DURATION}"
+LIGHT_LOG_MESSAGE = f"Program Started\n\nLight relay is using pin {LIGHT_RELAY_PIN}\nLight will turn on at {LIGHT_START_TIME}\nIt will remain on for {LIGHT_DURATION} seconds"
 
 ##########                Reference               ##########
 
