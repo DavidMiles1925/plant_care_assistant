@@ -13,6 +13,7 @@ from config import ADS_COMMANDS, \
             DRY_SOIL_VALUE, \
             DRY_VALUE, \
             LED_ARRAY_WATER_STATUS, \
+            LIGHT_SCRIPT_PATH, \
             MOIST_SOIL_VALUE, \
             NUMBER_OF_ANALOG_INPUTS, \
             OPENING_MESSAGE, \
@@ -107,7 +108,7 @@ def water_plant(analog_input):
 if __name__ == "__main__":
     try:
         # Start script to turn the light on at specified time.
-        subprocess.Popen(["python", "light.py"])
+        subprocess.Popen(["sudo", "python", LIGHT_SCRIPT_PATH])
 
         setup_pins()
 

@@ -4,13 +4,14 @@ NUMBER_OF_ANALOG_INPUTS = 3     # Maximum 3
 DURATION_BETWEEN_CHECKS = 10    # Time in seconds
 DRY_COUNT_BEFORE_WATERING = 6   # How many times should a "dry" result be returned before the plant is watered?
 WATER_IF_DRY = True            # Should the plant(s) be watered if it is dry?
-PLANT_SCRIPT_PATH = "/home/bulbasaur/plant_care_assistant/light.py"
+
 
 ##########               Lighting                 ##########
 
 LIGHT_RELAY_PIN = 23
 LIGHT_START_TIME = "20:00:00"      # Format must be HH:MM:SS, 24 hr format
 LIGHT_DURATION = 10             # Time in seconds
+LIGHT_SCRIPT_PATH = "/home/bulbasaur/plant_care_assistant/light.py"
 
 
 ##########      Capacitive Moisture Sensor        ##########
