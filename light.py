@@ -26,6 +26,12 @@ def countdown_timer_to_turn_off_light(seconds):
 
 
 def setup_pins():
+        # Board Mode: BCM
+        GPIO.setmode(GPIO.BCM)
+
+        # Disable Warnings
+        GPIO.setwarnings(False)
+
         GPIO.setup(LIGHT_RELAY_PIN, GPIO.OUT)
         GPIO.output(LIGHT_RELAY_PIN, GPIO.LOW)   
 
