@@ -106,11 +106,16 @@ def water_plant(analog_input):
 
 if __name__ == "__main__":
     try:
-        subprocess.Popen(["python", "light.py"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # Start script to turn the light on at specified time.
+        subprocess.Popen(["python", "light.py"])
+
         setup_pins()
+
         os.system("clear")
+
         console_and_log(OPENING_MESSAGE)
         
+        # Set up a counter for each moisture sensor to keep track of how long they have been dry.
         for input_counter in range(NUMBER_OF_ANALOG_INPUTS):
             is_dry_list.append(1)
 
