@@ -86,3 +86,5 @@ sudo apt-get install python3-smbus
 > > Pin 23
 >
 > > Didn't think hard enough about the logic on my light. I will just write a separate script instead of trying to incorporate it into my already growing .py file.
+>
+> > Spent a whole bunch of time working on the light. I ended up running light.py as a subprocess. That is fine, except I need to incorporate a more graceful way of terminating the processes. Maybe. The point of the thing is to keep running all the time.
