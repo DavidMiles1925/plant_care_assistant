@@ -106,7 +106,7 @@ def water_plant(analog_input):
 
 if __name__ == "__main__":
     try:
-        subprocess.run(["python", "light.py"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.Popen(["python", "light.py"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         setup_pins()
         os.system("clear")
         console_and_log(OPENING_MESSAGE)
