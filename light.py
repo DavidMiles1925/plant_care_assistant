@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import threading
 from datetime import datetime
 from time import sleep
-from config import LIGHT_DURATION, LIGHT_LOG_MESSAGE, LIGHT_RELAY_PIN, LIGHT_START_TIME
+from config import LIGHT_DURATION, LIGHT_LOG_MESSAGE, LIGHT_RELAY_PIN, LIGHT_START_TIME_ARRAY
 from logger import light_log
 
 
@@ -13,9 +13,10 @@ light_is_on = False
 def check_if_light_toggle_is_needed():
     current_time = datetime.now().strftime("%H:%M:%S")
 
-    if current_time == LIGHT_START_TIME and light_is_on == False:
-        toggle_light(True)
-        start_a_timer(LIGHT_DURATION)
+    for time_value in range(len(LIGHT_START_TIME_ARRAY)):
+        if current_time == LIGHT_START_TIME_ARRAY[time_value] and light_is_on == False:
+            toggle_light(True)
+            start_a_timer(LIGHT_DURATION)
 
 def countdown_timer_to_turn_off_light(seconds):
     while seconds > 0:
