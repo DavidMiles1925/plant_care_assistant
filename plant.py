@@ -107,7 +107,7 @@ def water_plant(analog_input):
 
 if __name__ == "__main__":
     try:
-        # Start script to turn the light on at specified time.
+        # Start script to turn the light on/off at specified time.
         subprocess.Popen(["sudo", "python", LIGHT_SCRIPT_PATH])
 
         setup_pins()
@@ -121,6 +121,8 @@ if __name__ == "__main__":
             is_dry_list.append(1)
 
         while True:
+
+            # Collect metrics for each input and water plants if necessary
             for analog_input in range(NUMBER_OF_ANALOG_INPUTS):
                 sensor_value = read_sensor(analog_input)
 

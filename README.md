@@ -2,6 +2,19 @@
 
 ## Project Description
 
+This project was developed to liven up my workspace. I wanted to have some plants, but historically I haven't kept them alive very well. I either over-water or under-water them. On top of that, my workspace gets no natural sunlight, so I wanted to make sure my plants got plenty of light. And lastly, my garage gets chilly in the winter, so I wanted my plants stay warm.
+
+## Accepatance Criteria
+
+This project, when it is complete will:
+
+- Support up to 3 plants
+- Monitor the moisture levels of the soil of each plant
+- Water each plant when the soil is dry AND the soil has had an adequete period of dryness
+- Provide adequete lighting for the plants with a timer function (future state idea: smart lighting through feedback from a photo-resistor)
+- Provide gentle heat when soil temperature falls too low
+- Log all metrics for debugging and historical reference
+
 ## Seting up the Device
 
 ### Parts List
@@ -22,13 +35,26 @@ Diagram will be posted when project is complete
 
 ### Build the Board
 
+Instructions here
+
 ### Set Up the Pi
 
 [See my github tutorial on how to set up the Raspberry Pi Zero 2 W](https://github.com/DavidMiles1925/pi_zero_setup)
 
+- Make sure to also follow the instructions on that page on how to:
+  [Set up a static IP address](https://github.com/DavidMiles1925/pi_zero_setup?tab=readme-ov-file#configure-static-ip-address)
+
 ### Set Up I2C/smbus
 
 1. Enable I2C
+
+```bash
+sudo raspi-config
+```
+
+- Interface Options
+- ARM I2C
+
 2. Install smbus
 
 ```bash
@@ -40,9 +66,29 @@ sudo apt-get install python3-smbus
 1. Install Git
 2. Clone Repo
 
+### Configuring the Program
+
+- Important values to change in the config.py file
+
 ### Run the Program
 
+- Navigating to directory
+- Running program
+
+```bash
+sudo python plant.py
+```
+
+- Enabling program to run on startup (link to Pi Setup Page)
+
 ### Accessing the Logs
+
+- Get into Pi via SSH
+- Navigate to directory
+- Open logs
+- Basic nano navigation
+
+## Gallery
 
 ## Development Notes
 
