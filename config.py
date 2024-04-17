@@ -10,7 +10,7 @@ WATER_IF_DRY = True             # Should the plant(s) be watered if it is dry?
 
 LIGHT_RELAY_PIN = 23
 LIGHT_START_TIME_ARRAY = ["20:00:00", "10:45:00", "10:46:00"]      # Format must be HH:MM:SS, 24 hr format
-LIGHT_DURATION = 1800              # Time in seconds
+LIGHT_DURATION = 30              # Time in seconds
 LIGHT_SCRIPT_PATH = "/home/bulbasaur/plant_care_assistant/light.py"
 
 
