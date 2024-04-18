@@ -1,8 +1,8 @@
 ##########        Main Control Variables          ##########
 
 NUMBER_OF_ANALOG_INPUTS = 3     # Maximum 3
-DURATION_BETWEEN_CHECKS = 1800    # Time in seconds
-DRY_COUNT_BEFORE_WATERING = 24   # How many times should a "dry" result be returned before the plant is watered?
+DURATION_BETWEEN_CHECKS = 10    # Time in seconds
+DRY_COUNT_BEFORE_WATERING = 6   # How many times should a "dry" result be returned before the plant is watered?
 WATER_IF_DRY = True             # Should the plant(s) be watered if it is dry?
 
 
