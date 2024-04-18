@@ -96,7 +96,7 @@ def setup_pins():
 
         for pin in range(len(WATER_PUMP_ARRAY)):
             GPIO.setup(WATER_PUMP_ARRAY[pin], GPIO.OUT)
-            GPIO.output(WATER_PUMP_ARRAY[pin], GPIO.HIGH)
+            GPIO.output(WATER_PUMP_ARRAY[pin], GPIO.LOW)
 
 
 def toggle_pump(value, analog_input):
