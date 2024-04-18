@@ -19,7 +19,8 @@ from config import ADS_COMMANDS, \
             OPENING_MESSAGE, \
             WET_SOIL_VALUE, \
             WATER_VALUE, \
-            WATER_IF_DRY
+            WATER_IF_DRY, \
+            WATER_PUMP_ARRAY
             
 from logger import console_and_log
 
@@ -91,16 +92,27 @@ def setup_pins():
 
         for led in range(len(LED_ARRAY_WATER_STATUS)):
             GPIO.setup(LED_ARRAY_WATER_STATUS[led], GPIO.OUT)
-            GPIO.output(LED_ARRAY_WATER_STATUS[led], GPIO.HIGH)     
+            GPIO.output(LED_ARRAY_WATER_STATUS[led], GPIO.HIGH)
 
+        for pin in range(len(WATER_PUMP_ARRAY)):
+            GPIO.setup(WATER_PUMP_ARRAY[pin], GPIO.OUT)
+            GPIO.output(WATER_PUMP_ARRAY[pin], GPIO.HIGH)
+
+
+def toggle_pump(value, analog_input):
+    GPIO.output(WATER_PUMP_ARRAY[analog_input], value)
 
 
 def water_plant(analog_input):
     global is_dry_list
 
-    console_and_log(f"*****WATER DISPENSED: Sensor {analog_input + 1}*****")
+    toggle_pump(True, analog_input)
 
-    sleep(3)
+    sleep(1)
+
+    toggle_pump(False, analog_input)
+
+    console_and_log(f"*****WATER DISPENSED: Sensor {analog_input + 1}*****")
 
     is_dry_list[analog_input] = 0
 
