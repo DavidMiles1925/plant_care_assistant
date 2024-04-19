@@ -1,6 +1,6 @@
 ##########        Main Control Variables          ##########
 
-PI_USERNAME = "bulbasuar"       # This is the username you log into your pi with.
+PI_USERNAME = "bulbasaur"       # This is the username you log into your pi with.
 NUMBER_OF_ANALOG_INPUTS = 3     # Maximum 3
 DURATION_BETWEEN_CHECKS = 1800    # Time in seconds
 DRY_COUNT_BEFORE_WATERING = 6   # How many times should a "dry" result be returned before the plant is watered?
