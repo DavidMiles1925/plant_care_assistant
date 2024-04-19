@@ -6,7 +6,8 @@ from smbus import SMBus
 from datetime import datetime
 from time import sleep
 
-from config import ADS_COMMANDS, \
+from config import ADS_BYTE_ADDRESS,\
+            ADS_COMMANDS, \
             CLEAR_SCREEN_BEFORE_PRINT, \
             DRY_COUNT_BEFORE_WATERING, \
             DURATION_BETWEEN_CHECKS, \
@@ -17,6 +18,7 @@ from config import ADS_COMMANDS, \
             MOIST_SOIL_VALUE, \
             NUMBER_OF_ANALOG_INPUTS, \
             OPENING_MESSAGE, \
+            PUMP_ON_TIME, \
             WET_SOIL_VALUE, \
             WATER_VALUE, \
             WATER_IF_DRY, \
@@ -79,8 +81,8 @@ def output_sensor_data(value, status, analog_input):
 
 
 def read_sensor(input):
-    bus.write_byte(0x4b, ADS_COMMANDS[input])
-    return bus.read_byte(0x4b)
+    bus.write_byte(ADS_BYTE_ADDRESS, ADS_COMMANDS[input])
+    return bus.read_byte(ADS_BYTE_ADDRESS)
 
 
 def setup_pins():
@@ -109,7 +111,7 @@ def water_plant(analog_input):
 
     toggle_pump(True, analog_input)
 
-    sleep(1)
+    sleep(PUMP_ON_TIME)
 
     toggle_pump(False, analog_input)
 

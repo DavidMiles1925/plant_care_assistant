@@ -33,16 +33,16 @@ This project, when it is complete will:
 
 Diagram will be posted when project is complete
 
-### Build the Board
-
-Instructions here
-
 ### Set Up the Pi
 
 [See my github tutorial on how to set up the Raspberry Pi Zero 2 W](https://github.com/DavidMiles1925/pi_zero_setup)
 
 - Make sure to also follow the instructions on that page on how to:
   [Set up a static IP address](https://github.com/DavidMiles1925/pi_zero_setup?tab=readme-ov-file#configure-static-ip-address)
+
+### Build the Board
+
+1. Connect ADS sensor.
 
 ### Set Up I2C/smbus
 
@@ -144,3 +144,9 @@ sudo python plant.py
 > > Spent a whole bunch of time working on the light. I ended up running light.py as a subprocess. That is fine, except I need to incorporate a more graceful way of terminating the processes. Maybe. The point of the thing is to keep running all the time.
 >
 > > I made the light start time into an array of start times. In order to avoid scorching the leaves, I will give the plants short bursts of diirected light throughout the day, rather than a sustained period.
+>
+> > I incorporated the actual light. I had to cut off the little modulator (or whatever you call it) that controls the timer and brightness in order to get a pure on/off functionality from the light.
+>
+> > Hooked up first pumps and relays. I encountered an issue at first where the relays would all turn on and then not turn back off. I discovered this was a combination of initializing the pins incorrectly, and having a faulty power source. The power source was not supplying sufficient voltage to flip the relays reliably, and the code was set to intiallize the pins as HIGH.
+>
+> > Printed the water basin and got the pumps added. Coated the wires to the pumps in silicone just in case they happen to fall into the water. Also made a little video about soldering with the helping hands.
