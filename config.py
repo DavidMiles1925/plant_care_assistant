@@ -41,8 +41,8 @@ ADS_BYTE_ADDRESS = 0x4b
 
 # To use the ADS1115, comment out the above constants, and uncomment the constants below.
 
-ADS_COMMANDS = [0x40, 0x41, 0x42, 0x43]
-ADS_BYTE_ADDRESS = 0x01
+#ADS_COMMANDS = [0x40, 0x41, 0x42, 0x43]
+#ADS_BYTE_ADDRESS = 0x01
 
 
 ##########             Welcome Message            ##########
