@@ -22,12 +22,17 @@ This project, when it is complete will:
 | Item                                     | Quantity | Link           |
 | :--------------------------------------- | :------: | :------------- |
 | Raspberry Pi Zero 2 W (Any Pi will work) |    1     | link goes here |
+| MicroSD card (For Raspberry Pi)          |    1     | link goes here |
+| 20x2 Pin Header for Raspberry Pi         |    1     | link goes here |
 | ADS7830 Analog-to-Digital Converter      |    1     | link goes here |
-| Capacitive Moisture Sensor(s)            |   1-3    | link goes here |
-| Water Pump(s) and Line                   |   1-3    | link goes here |
-| 5V Relay                                 |   2-4    | link goes here |
+| Capacitive Moisture Sensor(s)            |  1-3\*   | link goes here |
+| Water Pump(s) and Line                   |  1-3\*   | link goes here |
+| 5V USB Grow Light                        |    1     | link goes here |
+| 5V Relay                                 |  2-4\*   | link goes here |
 | Solderless Breadboard                    |    1     | link goes here |
 | Dupont Cables 10cm and 30cm              |   Many   | link goes here |
+
+\*Quantity is dependent on how many plants you want to care for.
 
 ### Diagram
 
@@ -37,12 +42,8 @@ Diagram will be posted when project is complete
 
 [See my github tutorial on how to set up the Raspberry Pi Zero 2 W](https://github.com/DavidMiles1925/pi_zero_setup)
 
-- Make sure to also follow the instructions on that page on how to:
+- If you want to run the code via SSH, make sure to also follow the instructions on that page on how to:
   [Set up a static IP address](https://github.com/DavidMiles1925/pi_zero_setup?tab=readme-ov-file#configure-static-ip-address)
-
-### Build the Board
-
-1. Connect ADS sensor.
 
 ### Set Up I2C/smbus
 
@@ -64,16 +65,30 @@ sudo apt-get install python3-smbus
 ### Install Code
 
 1. Install Git
+
+```bash
+sudo apt-get install git
+```
+
 2. Clone Repo
+
+```bash
+git clone https://github.com/DavidMiles1925/plant_care_assistant.git
+```
 
 ### Configuring the Program
 
-- Important values to change in the config.py file
+See the video for a detailed walkthrough of the configuration values. Otherwise
 
 ### Run the Program
 
 - Navigating to directory
-- Running program
+
+```bash
+cd plant_care_assistant
+```
+
+- Run the program
 
 ```bash
 sudo python plant.py
@@ -97,56 +112,3 @@ sudo python plant.py
 ![On the Shelf](./readme_media/on_the_shelf.jpg)
 
 ![Top View](./readme_media/top_view.jpg)
-
-## Development Notes
-
-> > Started the project by doing discovery on the Capacitive Moisture Sensor (CMS). I found that higher values equate to dryer conditions.
-> >
-> > Completely Dry: 217  
-> > Dry Soil: 205  
-> > Very Wet Soil: 130  
-> > Water: 103
-> >
-> > Parts:
-> > Raspberry Pi
-> > ADS7830 Analog-to-Digital Converter
-> > Capacitive Mositure Sensor v1.2
-> > Jumper Cables
->
-> > Now getting a different set of values...
-> >
-> > Completely Dry: 156
-> > Dry Soil: 153
-> > Very Wet Soil: 57  
-> > Water: 40
-> >
-> > About the same range between min and max, so theoretically one could have a calibration function?
-> > ~Water = Dry - 115
-> >
-> > After a lot of testing it seems to have stuck with this second range.
->
-> > > Nevermind, after turning it on again we are back to the first range. Thinking about it, I don't think I ever restarted the device. Maybe that was what needed to happend?
-> >
-> > Yep that was it.
->
-> > Added code to collect data from multiple analog inputs. Bought 3 plants and got sensors in them. Need to go back and get the watering functionallity working with multiple channels.
-> >
-> > Added Red LEDs for each of the 3 channels to indicate the need for watering. These will eventually (Once care is automated) be replaced with an RGB LED to indicate a broad status of the plants. (3 pins used for 1 each of the red LEDs, those same 3 pins used for a single RGB LED)
-> > Pins 17, 27, 22
->
-> > Added logic for "watering" multiple channels, still using LEDs as substitutes.
->
-> > Added ability to turn single light on and off
-> > Pin 23
->
-> > Didn't think hard enough about the logic on my light. I will just write a separate script instead of trying to incorporate it into my already growing .py file.
->
-> > Spent a whole bunch of time working on the light. I ended up running light.py as a subprocess. That is fine, except I need to incorporate a more graceful way of terminating the processes. Maybe. The point of the thing is to keep running all the time.
->
-> > I made the light start time into an array of start times. In order to avoid scorching the leaves, I will give the plants short bursts of diirected light throughout the day, rather than a sustained period.
->
-> > I incorporated the actual light. I had to cut off the little modulator (or whatever you call it) that controls the timer and brightness in order to get a pure on/off functionality from the light.
->
-> > Hooked up first pumps and relays. I encountered an issue at first where the relays would all turn on and then not turn back off. I discovered this was a combination of initializing the pins incorrectly, and having a faulty power source. The power source was not supplying sufficient voltage to flip the relays reliably, and the code was set to intiallize the pins as HIGH.
->
-> > Printed the water basin and got the pumps added. Coated the wires to the pumps in silicone just in case they happen to fall into the water. Also made a little video about soldering with the helping hands.
