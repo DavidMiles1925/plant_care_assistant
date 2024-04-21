@@ -3,6 +3,7 @@
 ## Video
 
 [Project Video Link](https://www.youtube.com/watch?v=mg84hZeF66U&t=700s)
+[Video Image](./readme_media/finished_product.jpg)
 
 ## Project Description
 
@@ -200,8 +201,6 @@ sudo python plant.py
 More detailed info coming soon. Check out the [video](#video) for more details.
 
 ## Gallery
-
-![Finished](./readme_media/finished_product.jpg)
 
 ![Overhed](./readme_media/relay_overhead.png)
 
