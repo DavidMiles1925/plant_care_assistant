@@ -86,35 +86,59 @@ This project was developed to liven up my workspace. I wanted to have some plant
 
 <img src="./readme_media/calibration.jpg" width="300" alt="calibration">
 
+### Set Up Relays For Pumps
+
+You'll need to wire up the relays as shown in the [diagram](#diagram).
+
+<img src="./readme_media/relay_pi_side.png" width="300" alt="relay_pi_side">
+
+- `DC+` may be labeled as `VCC`
+- `DC-` may be labeled as `GND`
+- `IN` may be labeled as `PIN`
+
+<img src="./readme_media/relay_pump_side.png" width="300" alt="relay_pi_side">
+
+- Use the `NO` and `COM` ports. The NC port will turn the circuit on by default.
+
 ### Set Up I2C/smbus
 
-1. Enable I2C
+1. From the Raspberry Pi terminal, run the following command:
 
 ```bash
 sudo raspi-config
 ```
 
-- Interface Options
-- ARM I2C
+- Select Option 3: Interface Options
+- Enable `ARM I2C`
 
-2. Install smbus
+2. Install `smbus`
 
 ```bash
 sudo apt-get install python3-smbus
 ```
 
-### Install Code
+### Install Git and Code
 
-1. Install Git
+1. From the Raspberry Pi terminal, run the following command:
 
 ```bash
 sudo apt-get install git
 ```
 
-2. Clone Repo
+- Make sure to push an uppercase `Y` when you select "yes" to installing.
+
+2. Clone the code to your Pi by entering the following command.
 
 ```bash
 git clone https://github.com/DavidMiles1925/plant_care_assistant.git
+```
+
+### Navigate to the Directory
+
+- After installing your code:
+
+```bash
+cd plant_care_assistant
 ```
 
 ### Configuring the Program
@@ -122,12 +146,6 @@ git clone https://github.com/DavidMiles1925/plant_care_assistant.git
 See the video for a detailed walkthrough of the configuration values. Otherwise
 
 ### Run the Program
-
-- Navigating to directory
-
-```bash
-cd plant_care_assistant
-```
 
 - Run the program
 
