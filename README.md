@@ -29,7 +29,7 @@ This project was developed to liven up my workspace. I wanted to have some plant
 | :--------------------------------------- | :------: | :---------------------------------------------------------------------------------------------------------------------------------- |
 | Raspberry Pi Zero 2 W (Any Pi will work) |    1     | [Microcenter](https://www.microcenter.com/product/643085/raspberry-pi-zero-2-w)                                                     |
 | MicroSD card (For Raspberry Pi)          |    1     | [Microcenter](https://www.microcenter.com/product/658767/micro-center-64gb-ultra-microsdxc-class-10-flash-memory-card-with-adapter) |
-| 20x2 Pin Header for Raspberry Pi         |    1     | [Microcenter](https://www.amazon.com/gp/product/B083DYVWDN/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&)psc=1                         |
+| 20x2 Pin Header for Raspberry Pi         |    1     | [Microcenter](https://www.amazon.com/gp/product/B083DYVWDN/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)                         |
 | ADS7830 Analog-to-Digital Converter      |    1     | No Link Available                                                                                                                   |
 | Capacitive Moisture Sensor(s)            |  1-3\*   | [Amazon](https://www.amazon.com/gp/product/B07SYBSHGX/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)                              |
 | Water Pump(s) and Line                   |  1-3\*   | [Amazon](https://www.amazon.com/gp/product/B07TMW5CDM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)                              |
@@ -50,7 +50,7 @@ This project was developed to liven up my workspace. I wanted to have some plant
 
 **Note that all pins are in BCM mode**
 
-| Component                           | Pi/COnnection |    Power     |
+| Component                           | Pi/Connection |    Power     |
 | :---------------------------------- | :-----------: | :----------: |
 | ADS7830 (or 1115)                   |     2, 3      |  3.3V (Pi)   |
 | Capacitive Moisture Sensor v 1.2 #1 |   A0 (ADS)    |  3.3V (Pi)   |
@@ -76,7 +76,7 @@ This project was developed to liven up my workspace. I wanted to have some plant
 
 ### Set Up the Capacitive Moisture Sensor v1.2
 
-1. Get the pins connected:
+1. Get the pins connected:  
    &emsp;See the [diagram](#diagram), [pin assignments](#pin-assignments), and [parts list](#parts-list) above.
 
 <img src="./readme_media/sensor1.jpg" width="300" alt="sensor1">
@@ -100,7 +100,7 @@ You'll need to wire up the relays as shown in the [diagram](#diagram).
 
 - Use the `NO` and `COM` ports. The NC port will turn the circuit on by default.
 
-### Set up the pumps
+### Set Up the Pumps
 
 1. Wire up the power for the pump using batteries or a USB cable. **DO NOT POWER THESE PUMPS DIRECTLY WITH THE PI!!!**
 
@@ -116,15 +116,23 @@ You'll need to wire up the relays as shown in the [diagram](#diagram).
 
 3. **Ensure your wires are guarded from any contact with the water.**
 
-4. (Optional) Print the Water Tank from the 3D_prints_files(https://github.com/DavidMiles1925/plant_care_assistant/tree/main/3D_print_files) folder at the top of the page.
+4. (Optional) Print the Water Tank from the [3D_prints_files](https://github.com/DavidMiles1925/plant_care_assistant/tree/main/3D_print_files) folder at the top of the page.
 
 <img src="./readme_media/water tank.png" width="300" alt="water_tank">
 
-5. (Optional) Print the Plant Pot Hose Clips from the 3D_prints_files(https://github.com/DavidMiles1925/plant_care_assistant/tree/main/3D_print_files) folder at the top of the page.
+5. (Optional) Print the Plant Pot Hose Clips from the [3D_prints_files](https://github.com/DavidMiles1925/plant_care_assistant/tree/main/3D_print_files) folder at the top of the page.
 
 <img src="./readme_media/clip.png" width="300" alt="hose_clip">
 
 6. Hook your hose up to the pumps, and run them to the pot.
+
+### Set Up the Light
+
+1. The light is powered just like the [pumps](#set-up-the-pumps), in that it needs to be powered by an external power source. **NOT THE PI!**
+
+2. The light connects to a [relay](#set-up-relays-for-pumps) the same way the pumps do.
+
+3. **See the [video](#video) for information about removing the module on the light.**
 
 ### Set Up I2C/smbus
 
@@ -169,7 +177,9 @@ cd plant_care_assistant
 
 ### Configuring the Program
 
-See the video for a detailed walkthrough of the configuration values. Otherwise
+Configuration instructions coming soon.
+
+See the video for a detailed walkthrough of the configuration values.
 
 ### Run the Program
 
@@ -179,21 +189,19 @@ See the video for a detailed walkthrough of the configuration values. Otherwise
 sudo python plant.py
 ```
 
-- Enabling program to run on startup (link to Pi Setup Page)
-
 ### Accessing the Logs
 
-- Navigate to directory
+- Navigate to `/logs` directory
 - Open logs
 - Basic nano navigation
 
+More detailed info coming soon. Check out the [video](#video) for more details.
+
 ## Gallery
 
-![Hooked Up to Monitor](./readme_media/hooked_to_monitor.png)
+![Finished](./readme_media/finished_product.jpg)
 
-![First Time Remote](./readme_media/first_time_remote.jpg)
-
-![On the Shelf](./readme_media/on_the_shelf.jpg)
+![](./readme_media/relay_overhead.png)
 
 ![Top View](./readme_media/top_view.jpg)
 
@@ -207,5 +215,5 @@ This picture is such a wonderful representation of the ADS7830. Check out the li
 
 ### Background Music for Intro
 
-Music I use: https://www.bensound.com
+Music I use: https://www.bensound.com  
 License code: WUITXNB2OK8EGMAO
