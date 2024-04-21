@@ -29,7 +29,7 @@ This project was developed to liven up my workspace. I wanted to have some plant
 | :--------------------------------------- | :------: | :---------------------------------------------------------------------------------------------------------------------------------- |
 | Raspberry Pi Zero 2 W (Any Pi will work) |    1     | [Microcenter](https://www.microcenter.com/product/643085/raspberry-pi-zero-2-w)                                                     |
 | MicroSD card (For Raspberry Pi)          |    1     | [Microcenter](https://www.microcenter.com/product/658767/micro-center-64gb-ultra-microsdxc-class-10-flash-memory-card-with-adapter) |
-| 20x2 Pin Header for Raspberry Pi         |    1     | https://www.amazon.com/gp/product/B083DYVWDN/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1                                        |
+| 20x2 Pin Header for Raspberry Pi         |    1     | [Microcenter](https://www.amazon.com/gp/product/B083DYVWDN/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&)psc=1                         |
 | ADS7830 Analog-to-Digital Converter      |    1     | No Link Available                                                                                                                   |
 | Capacitive Moisture Sensor(s)            |  1-3\*   | [Amazon](https://www.amazon.com/gp/product/B07SYBSHGX/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)                              |
 | Water Pump(s) and Line                   |  1-3\*   | [Amazon](https://www.amazon.com/gp/product/B07TMW5CDM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)                              |
@@ -44,21 +44,28 @@ This project was developed to liven up my workspace. I wanted to have some plant
 
 ### Diagram
 
-<img src="./readme_media/diagram.png" size="width: 500px" alt="diagram">
+<img src="./readme_media/diagram.png" width="500" alt="diagram">
 
 ### Pin Assignments
 
 **Note that all pins are in BCM mode**
 
-| Connection                       | Pin |   Power   |
-| :------------------------------- | :-: | :-------: |
-| Capacitive Moisture Sensor v 1.2 | ADS | 3.3V (Pi) |
-| Pump **Relay** 1                 |  5  |  5V (Pi)  |
-| Pump **Relay** 2 (Optional)      |  5  |  5V (Pi)  |
-| Pump **Relay** 3 (Optional)      |  5  |  5V (Pi)  |
-| Pump **Relay** 1 ()              |  5  |  5V (Pi)  |
-| Pump **Relay** 1                 |  5  |  5V (Pi)  |
-| Pump **Relay** 1                 |  5  |  5V (Pi)  |
+| Component                           | Pi/COnnection |    Power     |
+| :---------------------------------- | :-----------: | :----------: |
+| ADS7830 (or 1115)                   |     2, 3      |  3.3V (Pi)   |
+| Capacitive Moisture Sensor v 1.2 #1 |   A0 (ADS)    |  3.3V (Pi)   |
+| Capacitive Moisture Sensor v 1.2 #1 |   A1 (ADS)    |  3.3V (Pi)   |
+| Capacitive Moisture Sensor v 1.2 #1 |   A2 (ADS)    |  3.3V (Pi)   |
+| LED #1                              |      17       |  3.3V (Pi)   |
+| LED #2                              |      27       |  3.3V (Pi)   |
+| LED #3                              |      22       |  3.3V (Pi)   |
+| Pump **Relay** #1                   |       5       |   5V (Pi)    |
+| Pump **Relay** #2 (Optional)        |       6       |   5V (Pi)    |
+| Pump **Relay** #3 (Optional)        |      13       |   5V (Pi)    |
+| Light Relay                         |      23       | 5V (**USB**) |
+| Water Pump #1                       |    Relay 1    | 5V (**USB**) |
+| Water Pump #2 (Optional)            |    Relay 2    | 5V (**USB**) |
+| Water Pump #3 (Optional)            |    Relay 3    | 5V (**USB**) |
 
 ### Set Up the Pi
 
@@ -72,12 +79,12 @@ This project was developed to liven up my workspace. I wanted to have some plant
 1. Get the pins connected:
    &emsp;See the [diagram](#diagram), [pin assignments](#pin-assignments), and [parts list](#parts-list) above.
 
-<img src="./readme_media/sensor1.jpg" size="width: 300px" alt="sensor1">
-<img src="./readme_media/sensor2.jpg" size="width: 300px" alt="sensor2">
+<img src="./readme_media/sensor1.jpg" width="300" alt="sensor1">
+<img src="./readme_media/sensor2.jpg" width="300" alt="sensor2">
 
 2. Make sure to calibrate your values with dry air, water, and everything in between (later after you get the code running):
 
-<img src="./readme_media/calibration.jpg" size="width: 300px" alt="calibration">
+<img src="./readme_media/calibration.jpg" width="300" alt="calibration">
 
 ### Set Up I2C/smbus
 
