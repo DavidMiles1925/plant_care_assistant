@@ -1,6 +1,6 @@
 # Plant Care Assistant
 
-Video:
+## Video
 
 ## Project Description
 
@@ -44,7 +44,7 @@ This project was developed to liven up my workspace. I wanted to have some plant
 
 ### Diagram
 
-<img src="./readme_media/diagram.png" width="500" alt="diagram">
+<img src="./readme_media/diagram.png" width="800" alt="diagram">
 
 ### Pin Assignments
 
@@ -96,9 +96,35 @@ You'll need to wire up the relays as shown in the [diagram](#diagram).
 - `DC-` may be labeled as `GND`
 - `IN` may be labeled as `PIN`
 
-<img src="./readme_media/relay_pump_side.png" width="300" alt="relay_pi_side">
+<img src="./readme_media/relay_pump_side.png" width="300" alt="relay_pump_side">
 
 - Use the `NO` and `COM` ports. The NC port will turn the circuit on by default.
+
+### Set up the pumps
+
+1. Wire up the power for the pump using batteries or a USB cable. **DO NOT POWER THESE PUMPS DIRECTLY WITH THE PI!!!**
+
+**See the [Video](#video) for tips on working with the tiny leads on the pump.**
+
+<img src="./readme_media/pump.png" width="300" alt="pump">
+<img src="./readme_media/pump_wires.png" width="300" alt="pump_wires">
+<img src="./readme_media/batteries.png" width="300" alt="pump">
+
+2. Connect pumps to relays. See [pins](#pin-assignments) above for hookup to Pi.
+
+<img src="./readme_media/pump to relay.png" width="300" alt="pump_to_relay">
+
+3. **Ensure your wires are guarded from any contact with the water.**
+
+4. (Optional) Print the Water Tank from the 3D_prints_files(https://github.com/DavidMiles1925/plant_care_assistant/tree/main/3D_print_files) folder at the top of the page.
+
+<img src="./readme_media/water tank.png" width="300" alt="water_tank">
+
+5. (Optional) Print the Plant Pot Hose Clips from the 3D_prints_files(https://github.com/DavidMiles1925/plant_care_assistant/tree/main/3D_print_files) folder at the top of the page.
+
+<img src="./readme_media/clip.png" width="300" alt="hose_clip">
+
+6. Hook your hose up to the pumps, and run them to the pot.
 
 ### Set Up I2C/smbus
 
