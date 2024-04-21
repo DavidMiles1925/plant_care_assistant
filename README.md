@@ -65,10 +65,11 @@ This project was developed to liven up my workspace. I wanted to have some plant
 | Pump **Relay** #1                   |       5       |   5V (Pi)    |
 | Pump **Relay** #2 (Optional)        |       6       |   5V (Pi)    |
 | Pump **Relay** #3 (Optional)        |      13       |   5V (Pi)    |
-| Light Relay                         |      23       | 5V (**USB**) |
+| Light Relay #4                      |      23       |   5V (Pi)    |
 | Water Pump #1                       |    Relay 1    | 5V (**USB**) |
 | Water Pump #2 (Optional)            |    Relay 2    | 5V (**USB**) |
 | Water Pump #3 (Optional)            |    Relay 3    | 5V (**USB**) |
+| Light                               |    Relay 4    | 5V (**USB**) |
 
 ### Set Up the Pi
 
