@@ -3,7 +3,7 @@
 ## Video
 
 [Project Video Link](https://www.youtube.com/watch?v=mg84hZeF66U&t=700s)
-[Video Image](./readme_media/finished_product.jpg)
+![Video Image](./readme_media/finished_product.jpg)
 
 ## Project Description
 
