@@ -103,7 +103,6 @@ def setup_pins():
 
 def toggle_pump(value, analog_input):
     GPIO.output(WATER_PUMP_ARRAY[analog_input], value)
-    console_and_log(f"toggle pump - value:{value} analog:{analog_input}")
 
 
 def water_plant(analog_input):
