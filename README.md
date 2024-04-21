@@ -2,6 +2,10 @@
 
 ## Video
 
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=mg84hZeF66U&t=700s" frameborder="0" allowfullscreen></iframe>
+
+[Project Video Link](https://www.youtube.com/watch?v=mg84hZeF66U&t=700s)
+
 ## Project Description
 
 This project was developed to liven up my workspace. I wanted to have some plants, but historically I haven't kept them alive very well. I either over-water or under-water them. On top of that, my workspace gets no natural sunlight, so I wanted to make sure my plants got plenty of light. And lastly, my garage gets chilly in the winter, so I wanted my plants stay warm.
@@ -201,7 +205,7 @@ More detailed info coming soon. Check out the [video](#video) for more details.
 
 ![Finished](./readme_media/finished_product.jpg)
 
-![](./readme_media/relay_overhead.png)
+![Overhed](./readme_media/relay_overhead.png)
 
 ![Top View](./readme_media/top_view.jpg)
 
