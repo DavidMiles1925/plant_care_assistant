@@ -8,14 +8,18 @@ This project was developed to liven up my workspace. I wanted to have some plant
 
 ## Accepatance Criteria
 
-This project, when it is complete will:
+**This project, when it is complete will:**
 
 - Support up to 3 plants
 - Monitor the moisture levels of the soil of each plant
 - Water each plant when the soil is dry AND the soil has had an adequete period of dryness
-- Provide adequete lighting for the plants with a timer function (future state idea: smart lighting through feedback from a photo-resistor)
-- Provide gentle heat when soil temperature falls too low
+- Provide adequete lighting for the plants with a timer function
 - Log all metrics for debugging and historical reference
+
+**Future State:**
+
+- Provide gentle heat when soil temperature falls too low (future state)
+- Smart lighting through feedback from a photo-resistor
 
 ## Seting up the Device
 
@@ -40,7 +44,21 @@ This project, when it is complete will:
 
 ### Diagram
 
-Diagram will be posted when project is complete
+<img src="./readme_media/diagram.png" size="width: 500px" alt="diagram">
+
+### Pin Assignments
+
+**Note that all pins are in BCM mode**
+
+| Connection                       | Pin |   Power   |
+| :------------------------------- | :-: | :-------: |
+| Capacitive Moisture Sensor v 1.2 | ADS | 3.3V (Pi) |
+| Pump **Relay** 1                 |  5  |  5V (Pi)  |
+| Pump **Relay** 2 (Optional)      |  5  |  5V (Pi)  |
+| Pump **Relay** 3 (Optional)      |  5  |  5V (Pi)  |
+| Pump **Relay** 1 ()              |  5  |  5V (Pi)  |
+| Pump **Relay** 1                 |  5  |  5V (Pi)  |
+| Pump **Relay** 1                 |  5  |  5V (Pi)  |
 
 ### Set Up the Pi
 
@@ -48,6 +66,18 @@ Diagram will be posted when project is complete
 
 - If you want to run the code via SSH, make sure to also follow the instructions on that page on how to:
   [Set up a static IP address](https://github.com/DavidMiles1925/pi_zero_setup?tab=readme-ov-file#configure-static-ip-address)
+
+### Set Up the Capacitive Moisture Sensor v1.2
+
+1. Get the pins connected:
+   &emsp;See the [diagram](#diagram), [pin assignments](#pin-assignments), and [parts list](#parts-list) above.
+
+<img src="./readme_media/sensor1.jpg" size="width: 300px" alt="sensor1">
+<img src="./readme_media/sensor2.jpg" size="width: 300px" alt="sensor2">
+
+2. Make sure to calibrate your values with dry air, water, and everything in between (later after you get the code running):
+
+<img src="./readme_media/calibration.jpg" size="width: 300px" alt="calibration">
 
 ### Set Up I2C/smbus
 
@@ -102,7 +132,6 @@ sudo python plant.py
 
 ### Accessing the Logs
 
-- Get into Pi via SSH
 - Navigate to directory
 - Open logs
 - Basic nano navigation
