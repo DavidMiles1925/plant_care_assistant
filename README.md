@@ -13,11 +13,12 @@ This project was developed to liven up my workspace. I wanted to have some plant
 
 **This project, when it is complete will:**
 
-- Support up to 3 plants
-- Monitor the moisture levels of the soil of each plant
-- Water each plant when the soil is dry AND the soil has had an adequete period of dryness
-- Provide adequete lighting for the plants with a timer function
-- Log all metrics for debugging and historical reference
+- ✔ Support up to 3 plants
+- ✔ Monitor the moisture levels of the soil of each plant
+- ✔ Water each plant when the soil is dry AND the soil has had an adequete period of dryness
+- ✔ Provide adequete lighting for the plants with a timer function
+- ✔ Log all metrics for debugging and historical reference
+- **✔ NEW:** The amount of water dispensed can be counted from the logs programmatically
 
 **Future State:**
 
@@ -196,10 +197,32 @@ sudo python plant.py
 ### Accessing the Logs
 
 - Navigate to `/logs` directory
+
+```bash
+cd logs/
+```
+
+- Check log names
+
+```bash
+ls
+```
+
 - Open logs
+
+```bash
+sudo nano FILENAME.txt
+```
+
 - Basic nano navigation
 
 More detailed info coming soon. Check out the [video](#video) for more details.
+
+### Counting the Log Files
+
+I've added a script called `log_counter.py`.
+
+The purpose of this script is to count the number of times water was dispensed from each sensor, based on the logs in the `logs/` directory.
 
 ## Gallery
 
