@@ -9,7 +9,6 @@ def count_water_dispensed(directory):
 
     # Iterate over each file in the specified directory
     for filename in os.listdir(directory):
-        print(os.path.dirname(os.path.realpath(__file__)))
         if os.path.isfile(os.path.join(directory, filename)):
             with open(os.path.join(directory, filename), 'r') as file:
                 # Read the file line by line
@@ -21,7 +20,6 @@ def count_water_dispensed(directory):
                         # Get the character 9 spaces to the right of it
                         char = line[index + 24]  # 25 = len("WATER DISPENSED:") + 9
                         # Increment the appropriate counter
-                        print(char)
                         if char == '1':
                             one_counter += 1
                         elif char == '2':
