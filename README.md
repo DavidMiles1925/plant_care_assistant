@@ -89,7 +89,7 @@ This project was developed to liven up my workspace. I wanted to have some plant
 
 2. Make sure to calibrate your values with dry air, water, and everything in between (later after you get the code running):
 
-<img src="./readme_media/calibration.jpg" width="300" alt="calibration">
+<img src="./readme_media/calibration.png" width="300" alt="calibration">
 
 ### Set Up Relays For Pumps
 
